@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cybercuriosity-tech.github.io/open-wallet/sitemap.xml

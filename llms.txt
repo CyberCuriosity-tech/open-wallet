@@ -1,0 +1,12 @@
+# open-wallet
+
+> The open, vendor-neutral reference for Apple Wallet and Google Wallet passes: plain-language concepts, field references, and copy-paste examples. Covers both platforms side by side. Maintained by the PassNinja team.
+
+## Docs
+- [Semantic tags (Apple Wallet)](https://cybercuriosity-tech.github.io/open-wallet/docs/apple/semantic-tags.html): What Apple Wallet semantic tags mean, where each one shows up (pass face, Event Guide, Lock Screen, or metadata), and how to add them, with JSON examples.
+
+## About
+- [Project overview & roadmap](https://github.com/CyberCuriosity-tech/open-wallet): What open-wallet is, what it covers (Apple Wallet + Google Wallet), and what's coming.
+
+## Topics
+Apple Wallet, Google Wallet, PassKit, pkpass, pass.json, semantic tags, poster event tickets, digital wallet passes, Add to Google Wallet, loyalty cards, event tickets, boarding passes.

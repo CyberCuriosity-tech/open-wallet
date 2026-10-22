@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>open-wallet · The open reference for Apple Wallet &amp; Google Wallet passes</title>
+<meta name="description" content="A vendor-neutral, concept-first reference for Apple Wallet and Google Wallet passes: what the fields mean, where they show up, and copy-paste examples. Covers both platforms side by side.">
+<link rel="canonical" href="https://cybercuriosity-tech.github.io/open-wallet/">
+<meta property="og:title" content="open-wallet — Apple Wallet &amp; Google Wallet passes, explained">
+<meta property="og:description" content="Concept-first docs for Apple Wallet and Google Wallet passes, with copy-paste examples. The one place that covers both.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cybercuriosity-tech.github.io/open-wallet/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "open-wallet",
+  "url": "https://cybercuriosity-tech.github.io/open-wallet/",
+  "description": "The open, vendor-neutral reference for Apple Wallet and Google Wallet passes: concepts, field references, and copy-paste examples.",
+  "about": ["Apple Wallet", "Google Wallet", "Wallet passes", "PassKit"],
+  "publisher": { "@type": "Organization", "name": "PassNinja", "url": "https://passninja.com" }
+}
+</script>
+<style>
+  :root{--accent:#635bff;--accent-ink:#4b45c6;--ink:#1a1f36;--ink2:#3c4257;--muted:#697386;--faint:#8792a2;
+    --bg:#fff;--bg2:#f7fafc;--line:#e6e9ee;--apple:#111;--google:#1a73e8;
+    --shadow:0 1px 2px rgba(10,37,64,.06),0 6px 24px rgba(10,37,64,.06)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#eef0ff;color:var(--accent-ink);padding:1.5px 6px;border-radius:5px;font-size:.85em}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+
+  header.nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(8px);z-index:10}
+  header.nav .wrap{display:flex;align-items:center;height:62px;gap:16px}
+  .brand{font-weight:800;letter-spacing:-.4px;font-size:17px;color:var(--ink)} .brand b{color:var(--accent)}
+  .nav .spacer{flex:1}
+  .nav a.ghs{font-size:14px;color:var(--muted);border:1px solid var(--line);padding:7px 13px;border-radius:8px}
+  .nav a.ghs:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+  .hero{padding:76px 0 56px;border-bottom:1px solid var(--line);background:
+    radial-gradient(1200px 400px at 70% -10%, #eef0ff 0%, transparent 60%)}
+  .hero .tag{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--accent-ink);background:#eef0ff;border:1px solid #dcdcff;padding:4px 11px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:52px;line-height:1.05;letter-spacing:-1.6px;margin:0 0 18px;max-width:16ch}
+  .hero p{font-size:20px;line-height:1.55;color:var(--ink2);max-width:60ch;margin:0 0 28px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;font-weight:600;font-size:15px;padding:12px 20px;border-radius:10px}
+  .btn.primary{background:var(--accent);color:#fff;box-shadow:var(--shadow)} .btn.primary:hover{background:#524bdb;text-decoration:none}
+  .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)} .btn.ghost:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+  section.body{padding:56px 0}
+  h2{font-size:14px;text-transform:uppercase;letter-spacing:.09em;color:var(--faint);font-weight:700;margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+  .card{display:block;border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff;box-shadow:var(--shadow);transition:transform .12s ease,border-color .12s}
+  .card:hover{text-decoration:none;transform:translateY(-2px);border-color:#d7d9ff}
+  .card .plat{font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:10px}
+  .card .plat.apple{color:var(--apple)} .card .plat.google{color:var(--google)} .card .plat.both{color:var(--accent-ink)}
+  .card h3{margin:0 0 6px;font-size:18px;letter-spacing:-.3px;color:var(--ink)}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .card .status{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px}
+  .status.live{background:#e6f7ef;color:#0a9d63} .status.soon{background:#f1f3f7;color:#697386}
+  .card.soon{opacity:.72}
+
+  .strip{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0}
+  .strip .wrap{display:flex;gap:30px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+  .strip h3{margin:0 0 6px;font-size:20px;letter-spacing:-.3px} .strip p{margin:0;color:var(--muted);max-width:56ch}
+
+  footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  @media(max-width:700px){ .hero h1{font-size:38px} .hero p{font-size:18px} }
+</style>
+</head>
+<body>
+  <header class="nav"><div class="wrap">
+    <span class="brand">open<b>-wallet</b></span>
+    <span class="spacer"></span>
+    <a href="docs/apple/semantic-tags.html">Docs</a>
+    <a class="ghs" href="https://github.com/CyberCuriosity-tech/open-wallet">GitHub</a>
+  </div></header>
+
+  <div class="hero"><div class="wrap">
+    <span class="tag">Apple Wallet · Google Wallet</span>
+    <h1>Wallet passes, finally explained.</h1>
+    <p>The open, vendor-neutral reference for building digital passes on Apple Wallet and Google Wallet — what every field <em>means</em>, where it shows up, and copy-paste examples. The one place that covers both platforms, side by side.</p>
+    <div class="cta">
+      <a class="btn primary" href="docs/apple/semantic-tags.html">Read the docs →</a>
+      <a class="btn ghost" href="https://github.com/CyberCuriosity-tech/open-wallet">Star on GitHub</a>
+    </div>
+  </div></div>
+
+  <section class="body"><div class="wrap">
+    <h2>Guides &amp; reference</h2>
+    <div class="grid">
+      <a class="card" href="docs/apple/semantic-tags.html">
+        <div class="plat apple">Apple Wallet</div>
+        <h3>Semantic tags</h3>
+        <p>What they mean, where each one shows up — pass face, Event Guide, Lock Screen — with JSON you can paste.</p>
+        <span class="status live">Live</span>
+      </a>
+      <div class="card soon">
+        <div class="plat apple">Apple Wallet</div>
+        <h3>Anatomy of a pass</h3>
+        <p>The <code>pass.json</code> structure: fields, images, barcodes, NFC, and web-service updates.</p>
+        <span class="status soon">Coming soon</span>
+      </div>
+      <div class="card soon">
+        <div class="plat apple">Apple Wallet</div>
+        <h3>Poster event tickets</h3>
+        <p>The full-bleed, artwork-forward event ticket layout introduced in iOS 18.</p>
+        <span class="status soon">Coming soon</span>
+      </div>
+      <div class="card soon">
+        <div class="plat google">Google Wallet</div>
+        <h3>Classes &amp; objects</h3>
+        <p>The Google Wallet model: pass classes, objects, the JWT flow, and “Add to Google Wallet”.</p>
+        <span class="status soon">Coming soon</span>
+      </div>
+      <div class="card soon">
+        <div class="plat both">Both platforms</div>
+        <h3>Create a pass</h3>
+        <p>Step-by-step with the REST API and SDKs — Node, Python, PHP, Ruby.</p>
+        <span class="status soon">Coming soon</span>
+      </div>
+      <div class="card soon">
+        <div class="plat both">Both platforms</div>
+        <h3>Apple vs Google</h3>
+        <p>A field-by-field comparison of the two platforms — concepts, capabilities, and gotchas.</p>
+        <span class="status soon">Coming soon</span>
+      </div>
+    </div>
+  </div></section>
+
+  <div class="strip"><div class="wrap">
+    <div>
+      <h3>Why open-wallet?</h3>
+      <p>Everything else is a single-language code library that shows you <em>how</em> to generate a pass but never explains <em>what the pieces mean</em>. We start with the concepts — then show the code.</p>
+    </div>
+    <a class="btn primary" href="docs/apple/semantic-tags.html">Start reading →</a>
+  </div></div>
+
+  <footer><div class="wrap">
+    <span>Maintained by the <a href="https://passninja.com">PassNinja</a> team · <a href="https://github.com/CyberCuriosity-tech/open-wallet">GitHub</a> · MIT licensed</span>
+    <span>Apple Wallet &amp; Google Wallet are trademarks of their respective owners.</span>
+  </div></footer>
+</body>
+</html>
