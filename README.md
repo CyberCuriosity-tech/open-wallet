@@ -20,6 +20,12 @@ Most wallet resources are single‑language code libraries that show you *how to
 | Create a pass — REST API & SDKs (Node, Python, PHP, Ruby) | Both | 🚧 Soon |
 | Apple Wallet vs Google Wallet — a field‑by‑field comparison | Both | 🚧 Soon |
 
+## Examples & code
+
+- **[REST API — curl](examples/api/)** — copy-paste requests and responses
+- **SDKs** — [Node](examples/sdk/node/) · [Python](examples/sdk/python/) · [PHP](examples/sdk/php/) · [Ruby](examples/sdk/ruby/) · [Java](examples/sdk/java/) · [C#](examples/sdk/csharp/)
+- **[CLI](tools/cli/)** · **[MCP](tools/mcp/)** · **[Skills](tools/skills/)** — terminal, AI agents, and pass validation
+
 ## What this covers
 
 - **Apple Wallet** — PassKit, the `pass.json` structure, semantic tags, poster event tickets, barcodes, NFC, and web‑service updates.

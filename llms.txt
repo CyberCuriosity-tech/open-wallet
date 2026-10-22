@@ -8,5 +8,12 @@
 ## About
 - [Project overview & roadmap](https://github.com/CyberCuriosity-tech/open-wallet): What open-wallet is, what it covers (Apple Wallet + Google Wallet), and what's coming.
 
+## Code & tools
+- [REST API (curl)](https://github.com/CyberCuriosity-tech/open-wallet/tree/main/examples/api): Copy-paste curl requests for creating and managing passes.
+- [SDKs](https://github.com/CyberCuriosity-tech/open-wallet/tree/main/examples/sdk): Official client libraries — Node, Python, PHP, Ruby, Java, C#.
+- [CLI](https://github.com/CyberCuriosity-tech/open-wallet/tree/main/tools/cli): Create and manage passes from the terminal (macOS, Windows, Linux).
+- [MCP](https://github.com/CyberCuriosity-tech/open-wallet/tree/main/tools/mcp): Drive passes from AI agents via the Model Context Protocol.
+- [Skills](https://github.com/CyberCuriosity-tech/open-wallet/tree/main/tools/skills): Test and validate passes (pass-test, pass-scenario, pass-diagnose).
+
 ## Topics
 Apple Wallet, Google Wallet, PassKit, pkpass, pass.json, semantic tags, poster event tickets, digital wallet passes, Add to Google Wallet, loyalty cards, event tickets, boarding passes.
